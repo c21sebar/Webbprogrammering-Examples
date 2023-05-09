@@ -1,0 +1,80 @@
+<script>
+
+var objects = [
+                {x:100,y:100,width:20,height:20},
+                {x:140,y:100,width:20,height:20},
+                {x:120,y:120,width:20,height:20}              
+              ];
+
+              var objects=[];
+              for(var i=0;i<100;i++){
+                  objects.push(x:Math.random()*300,y:Math.random()*300,width:20,height:20);
+              }
+
+function redraw()
+{
+    ctx.clearRect(0,0,400,400);
+        
+    for(object of objects){
+        ctx.save();
+        ctx.translate(object.x,object.y);  
+        ctx.drawImage(img,-10,-10);
+        ctx.restore();
+    }
+
+    window.requestAnimationFrame(redraw);;
+}  
+   
+function redraw()
+{
+    ctx.clearRect(0,0,400,400);
+        
+    for(obj of objects){
+        ctx.save();
+        ctx.translate(obj.x,obj.y);
+        ctx.scale(obj.size,obj].size);  
+        ctx.drawImage(img,-10,-10);
+        ctx.restore();
+    }
+
+    window.requestAnimationFrame(redraw);;
+}  
+
+function redraw()
+{
+    ctx.clearRect(0,0,400,400);
+        
+    for(obj of objects){
+        ctx.save();
+        ctx.translate(obj.x,obj.y);
+        ctx.scale(obj.size,obj].size);  
+        ctx.drawImage(img,-10,-10);
+        ctx.restore();
+
+        obj.y+=obj.size;
+        if(obj.y>400) obj.y=-20;
+    }
+
+    window.requestAnimationFrame(redraw);;
+}  
+
+function mouseMove(e, t){
+ 
+ var rect = e.target.getBoundingClientRect();
+ mx = e.clientX - rect.left; //x position within the element.
+ my = e.clientY - rect.top;  //y position within the element.        
+}           
+
+var txc=(mx-tileOffsX);
+var tyc=(my-tileOffsY);
+  
+var tcx=Math.round((txc/tileWidth)-0.5);
+var tcy=Math.round((tyc/tileHeight)-0.5);
+
+for(obj of objects){
+        if(mx>obj.x&&mx<(obj.x+obj.width)&&my>obj.y&&my<(obj.y+obj.height)){
+            // Mouse has his this object
+        }
+}
+
+</script>
