@@ -34,23 +34,11 @@
             ctx.clearRect(0,0,200,200);
 
             ctx.save();
-            
-            gradient=ctx.createLinearGradient(0,30,0,150);
-            gradient.addColorStop(0,"#da7");  
-            gradient.addColorStop(0.5,"#00f");
-            gradient.addColorStop(1,"#fff");
-            ctx.fillStyle=gradient;
+            ctx.fillStyle = 'blue';
             drawfish();
-            
             ctx.translate(0,75);
-            
-            gradient=ctx.createRadialGradient(140,100,20,180,100,200);
-            gradient.addColorStop(0,"#8ed6ff");
-            gradient.addColorStop(0.5,"#f00");
-            gradient.addColorStop(1,"#004CB3");
-            ctx.fillStyle=gradient;
+            ctx.fillStyle = 'red';
             drawfish();
-
             ctx.restore();
 
             window.requestAnimationFrame(redraw);
